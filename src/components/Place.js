@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 
 const Place = ( { id, name, sys, weather, main } ) => {
     function getIcon (icon){
-        if(icon === '01n' || icon === '01d'){
+        if(icon === '01d'){
             return '../../../img/sunny.png'
+        } else if(icon === '01n'){
+            return '../../../img/moon.png'
         } else if(icon === '02n' || icon === '02d'){
             return '../../../img/sun-cloud.png'
         } else if(icon === '03n' || icon === '03d' || icon === '04d' || icon === '04n'){
@@ -33,7 +35,7 @@ const Place = ( { id, name, sys, weather, main } ) => {
                     
                     <p className="paragraph"><span>{weather[0].main}</span> <span>{Math.round(main.temp)}ºC</span></p>
                 </div>
-                <div className="w-25">
+                <div className="w-30px">
                     <span className="ml-2 d-block w-100 receives-hover-right">></span>
                 </div>
             </a>

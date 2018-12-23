@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 import SearchForm from "./components/SearchForm";
+import SearchMessage from "./components/SearchMessage";
 import PlaceList from "./components/PlaceList";
 
 import 'normalize.css';
@@ -26,6 +27,7 @@ class App extends Component {
           </div>
         </div>
         <SearchForm />
+        <SearchMessage />
         <PlaceList />
       </div>
     );

@@ -13,12 +13,16 @@ body{
 
 .hover-right{
     .receives-hover-right{
-        transition: 0.3s margin-left ease-out;
+        transition: 0.3s transform ease-out;
     }
     &:hover{
         .receives-hover-right{
-            transition: 0.3s margin-left ease-out;
-            margin-left: 15px !important;
+            transition: 0.3s transform ease-out;
+            transform: translateX(10px);
         }
     }
+}
+
+.w-30-px{
+    width: 30px;
 }
