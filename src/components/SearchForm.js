@@ -6,7 +6,6 @@ import {
   setMatches,
   setData
 } from "../actions/searchAction";
-import configureStore from '../store/configureStore';
 import cityList from '../data/cityList.json';
 
 const SearchForm = (props) => {
@@ -50,17 +49,19 @@ const SearchForm = (props) => {
     
     return (
         <form
+            className="d-flex mt-4 justify-content-center search-form"
             onSubmit={handleOnSubmit}
         >
-        <input
-            id="searchInput"
-            type="text"
-            value={props.inputValue}
-            onChange={(e) => {
-            props.dispatch(setInputValue(e.target.value));
-            }}
-        />
-        <button type="submit">Search</button>
+            <input
+                className="input search-form__input mr-3"
+                id="searchInput"
+                type="text"
+                value={props.inputValue}
+                onChange={(e) => {
+                props.dispatch(setInputValue(e.target.value));
+                }}
+            />
+            <button type="submit" className="button">Search</button>
         </form>
     );
 };

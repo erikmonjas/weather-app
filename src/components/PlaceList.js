@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
 import Place from './Place';
-import configureStore from '../store/configureStore';
 
 const PlaceList = (props) => {
     return(
         <div>
-            <h2>Place List{console.log(props.data)}</h2>
-            <ul>
-                {props.data.map(item => {
-                    return <Place key={item.id} {...item} />
-                })}
+            <ul className="mt-5">
+                <div className="row">
+                    {props.data.map(item => {
+                        return <Place key={item.id} {...item} />
+                    })}
+                </div>
             </ul>
         </div>
     );

@@ -5,6 +5,10 @@ import configureStore from "./store/configureStore";
 import SearchForm from "./components/SearchForm";
 import PlaceList from "./components/PlaceList";
 
+import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.scss';
+
 function focusInput(){
   document.getElementById('searchInput').focus()
 }
@@ -15,7 +19,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Weather App</h1>
+        <h1 className="home-title mb-4">Weather App</h1>
+        <div className="row d-flex justify-content-center mt-5">
+          <div className="col-12 col-md-9 col-lg-7">
+            <p className="paragraph text-center">Travel around the world searching for real-time weather conditions. Enter the name of any city you can imagine and watch its conditions and forecast for the next days!</p>
+          </div>
+        </div>
         <SearchForm />
         <PlaceList />
       </div>

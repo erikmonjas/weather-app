@@ -1,0 +1,24 @@
+body{
+    background-color: $primary;
+    font-family: $font, 'Arial', 'sans-serif';
+    font-weight: $normal;
+    color: $white;
+    padding: 10vh 10vw;
+    line-height: 1.3rem;
+}
+
+.fz--sm{
+    font-size: 0.6rem;
+}
+
+.hover-right{
+    .receives-hover-right{
+        transition: 0.3s margin-left ease-out;
+    }
+    &:hover{
+        .receives-hover-right{
+            transition: 0.3s margin-left ease-out;
+            margin-left: 15px !important;
+        }
+    }
+}
