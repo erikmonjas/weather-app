@@ -4,11 +4,17 @@ body{
     font-weight: $normal;
     color: $white;
     padding: 10vh 10vw;
-    line-height: 1.3rem;
+    line-height: 1.3em;
 }
 
 .fz--sm{
     font-size: 0.6rem;
+}
+
+.text-sm-not-truncate{
+    @media (min-width:575px){
+        white-space: initial;
+    }
 }
 
 .hover-right{

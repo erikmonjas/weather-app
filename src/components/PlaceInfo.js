@@ -20,8 +20,10 @@ class PlaceInfo extends React.Component {
             return '../../../img/sunny-lg.png'
         } else if(weatherIcon === '01n'){
             return '../../../img/moon-lg.png'
-        } else if(weatherIcon === '02n' || weatherIcon === '02d'){
+        } else if(weatherIcon === '02d'){
             return '../../../img/sun-cloud-lg.png'
+        } else if(weatherIcon === '02n'){
+            return '../../../img/moon-cloud-lg.png'
         } else if(weatherIcon === '03n' || weatherIcon === '03d' || weatherIcon === '04d' || weatherIcon === '04n'){
             return '../../../img/cloudy-lg.png'
         } else if(weatherIcon === '09n' || weatherIcon === '09d' || weatherIcon === '10n' || weatherIcon === '10d'){
@@ -42,13 +44,16 @@ class PlaceInfo extends React.Component {
 
 
         return (
-            <div>
-                <div className="main-info d-flex">
-                    <img className="main-info__img mr-5" src={this.getIcon()} alt="weather icon" />
+            <div className="w-100 d-flex justify-content-center">
+                <div className="main-info d-sm-flex">
+                    <img className="main-info__img mr-5 d-block mb-4 mb-sm-0" src={this.getIcon()} alt="weather icon" />
                     <div className="main-info__text">
-                        <h1 className="home-title text-uppercase font-weight-normal mt-2">{city.name} <span className="paragraph">{city.country}</span></h1>
-                        <p className="font-weight-light mt-3"><span>{firstItem.weather[0].main}</span> <span>{Math.round(firstItem.main.temp)}ºC</span></p>
-                        <p className="font-weight-light mt-1">Wind speed: {firstItem.wind.speed} km/h</p>
+                        <div className="d-sm-flex align-items-end">
+                            <h1 className="home-title text-uppercase font-weight-normal text-left text-truncate text-sm-not-truncate">{city.name}</h1>
+                            <p className="mt-1 mt-sm-0 ml-0 ml-sm-2 paragraph">{city.country}</p>
+                        </div>
+                        <p className="main-info__conditions mt-3"><span>{firstItem.weather[0].main}</span> <span>{Math.round(firstItem.main.temp)}ºC</span></p>
+                        <p className="font-weight-light mt-1">Wind speed: {Math.round(firstItem.wind.speed)}km/h</p>
                         <p className="font-weight-light mt-1">Humidty: {firstItem.main.humidity}%</p>
                     </div>
                 </div>
@@ -73,7 +78,7 @@ class PlaceInfo extends React.Component {
         return (
             <div className="d-flex justify-content-between">
                 {this.state && this.state.data.city && this.getData()}
-                <Link to="/" className="close-icon">X</Link>
+                <Link to="/" className="close-icon ml-1 ml-sm-4">X</Link>
             </div>
         );
     }

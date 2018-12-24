@@ -30,7 +30,7 @@ const SearchForm = (props) => {
 
         let currentArray = [];
         matches.map((match) => {
-            fetch("https://api.openweathermap.org/data/2.5/weather?id="+ match.id +"&units=metric&APPID=b8027ef04ed1b2ed97f1668db34199b6")
+            fetch("https://api.openweathermap.org/data/2.5/forecast?id="+ match.id +"&units=metric&APPID=b8027ef04ed1b2ed97f1668db34199b6")
                 .then((result) => {
                     return result.json();
                 })

@@ -1,0 +1,11 @@
+.main-info__img{
+    height: fit-content;
+    @media (max-width: 575px){
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.main-info__conditions{
+    font-size: 1.1em;
+}

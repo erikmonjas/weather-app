@@ -8,7 +8,7 @@ const PlaceList = (props) => {
             <ul className="mt-5">
                 <div className="row">
                     {props.data.map(item => {
-                        return <Place key={item.id} {...item} />
+                        return <Place key={item.city.id} {...item} />
                     })}
                 </div>
             </ul>
