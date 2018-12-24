@@ -1,54 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
-import SearchForm from "./components/SearchForm";
-import SearchMessage from "./components/SearchMessage";
-import PlaceList from "./components/PlaceList";
+import AppRouter from './router/AppRouter';
 
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 
-function focusInput(){
-  document.getElementById('searchInput').focus()
-}
-
 const store = configureStore();
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1 className="home-title mb-4">Weather App</h1>
-        <div className="row d-flex justify-content-center mt-5">
-          <div className="col-12 col-md-9 col-lg-7">
-            <p className="paragraph text-center">Travel around the world searching for real-time weather conditions. Enter the name of any city you can imagine and watch its conditions and forecast for the next days!</p>
-          </div>
-        </div>
-        <SearchForm />
-        <SearchMessage />
-        <PlaceList />
-      </div>
-    );
-  }
-}
-
 const providerWrap = (
   <Provider store={store}>
-    <App />
+    <AppRouter />
   </Provider>
 );
 
-// store.subscribe(() => {
-//   console.log(store.getState());
-// });
+console.log(store.getState());
+
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(providerWrap, rootElement);
 
-
-focusInput();
-
-// https://stackoverflow.com/questions/20798477/how-to-find-index-of-all-occurrences-of-element-in-array
+if (!!document.getElementById('searchInput')) {
+  document.getElementById('searchInput').focus();
+}

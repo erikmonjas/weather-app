@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Place = ( { id, name, sys, weather, main } ) => {
     function getIcon (icon){
@@ -23,12 +24,11 @@ const Place = ( { id, name, sys, weather, main } ) => {
     }
     return(
         <li id={id} className="mb-4 col-12 col-md-6 col-xl-4 d-flex align-items-end">
-            <a href="#" className="d-flex align-items-end w-100 hover-right justify-content-center">
+            <Link to={"/"+ id +""} className="d-flex align-items-end w-100 hover-right justify-content-center">
                 <div>
-                    <img src={getIcon(weather[0].icon)} className="mr-2" />
+                    <img src={getIcon(weather[0].icon)} className="mr-2" alt="weather icon" />
                 </div>
                 <div>
-                    {console.log(weather)}
                     <p>
                         <span className="font-weight-bold text-uppercase">{name}</span> <span className="fz--sm">{sys.country}</span>
                     </p>
@@ -38,7 +38,7 @@ const Place = ( { id, name, sys, weather, main } ) => {
                 <div className="w-30px">
                     <span className="ml-2 d-block w-100 receives-hover-right">></span>
                 </div>
-            </a>
+            </Link>
         </li>
     );
 }

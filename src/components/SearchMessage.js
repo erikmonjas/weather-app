@@ -7,10 +7,10 @@ const SearchMessage = (props) => {
         if (search.length > 0 && matches.length > 0) {
             if (matches.length > 1) {
                 return <p className={classes}>Showing {matches.length} results for "{search}"</p>
-            } else if (matches.length == 1) {
+            } else if (matches.length === 1) {
                 return <p className={classes}>Showing {matches.length} result for "{search}"</p>
             }
-        } else if (search.length > 0 && matches.length == 0) {
+        } else if (search.length > 0 && matches.length === 0) {
             return <p className={classes}>There were no matches for "{search}", try searching for something else.</p>
         }
     }
