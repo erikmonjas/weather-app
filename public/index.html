@@ -24,22 +24,73 @@
       body{
         background-color: rgb(115, 101, 204);
       }
+      .loader-wrapper{
+        width: 15vw;
+        height: 15vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s opacity ease-out;
+      }
+      .loader{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 20vw;
+        border: 2px solid  rgba(255,255,255, .7);
+        -webkit-animation: loader1 3s linear infinite;
+            animation: loader1 3s linear infinite;
+      }
+      .loader:after{
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        width: 11px;
+        height: 11px;
+        border-radius: 10px;
+        background-color: #fff;
+        transform: translateX(-50%);
+      }
+
+      @-webkit-keyframes loader1{
+          0%{-webkit-transform:rotate(0deg);}
+          100%{-webkit-transform:rotate(360deg);}
+      }
+
+      @keyframes loader1{
+          0%{transform:rotate(0deg);}
+          100%{transform:rotate(360deg);}
+      }
+
+      #root{
+        opacity: 0;
+        transition: 0.3s opacity ease-out;
+      }
     </style>
   </head>
   <body>
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <script>
+      window.addEventListener('load', () => {
+        document.querySelector('.loader-wrapper').style.opacity = 0;
+        
+        setTimeout(() => {
+          document.getElementById('root').style.opacity = 1;
+          document.querySelector('.loader-wrapper').classList.add('d-none');
+          if(!!document.getElementById('searchInput')){
+            document.getElementById('searchInput').focus()
+          }
+        }, 350);
+      })
+    </script>
   </body>
 </html>

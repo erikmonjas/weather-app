@@ -1,0 +1,14 @@
+.footer__github{
+    width: 120px;
+    margin: 0 auto;
+}
+
+@media (max-width: 540px){
+    .footer__github{
+        width: 100px;
+    }
+}
+
+.footer__github img{
+    filter: invert(1);
+}

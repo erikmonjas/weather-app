@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import configureStore from "./store/configureStore";
 import AppRouter from './router/AppRouter';
+import Footer from './components/Footer'
 
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +13,7 @@ const store = configureStore();
 const providerWrap = (
   <Provider store={store}>
     <AppRouter />
+    <Footer />
   </Provider>
 );
 
@@ -24,7 +26,3 @@ const providerWrap = (
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(providerWrap, rootElement);
-
-if (!!document.getElementById('searchInput')) {
-  document.getElementById('searchInput').focus();
-}
