@@ -1,44 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather App made with React
 
-## Available Scripts
+This app lets you explore weather conditions all around the world. It's based on the Open Weather Map API. Once you've searched for the desired city, a list of matches will appear with it current weather and, if you click on one of them, you can access its details and forecast for the next five days.
 
-In the project directory, you can run:
+## How does it work?
 
-### `npm start`
+After the search input is received, this is compared with the list of all the cities in the database and only the matches are returned. Then the conditions for these matches are saved to the central store and displayed on screen.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When one of the items is clicked, the router redirects the user to a URL matching that location's ID. This is passed to the API and the place's data is fetched, showing then the present weather conditions and the future ones for the next 5 days.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The drawback here is that the API doesn't provide a list of matches when you search for a city, instead, a JSON is given to the developer so he can iterate through it and find the matches. This JSON file's size is over 28MB though, so it heavily slows down the loading of the page.
 
-### `npm test`
+## Which technologies does it use?
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+React is at the base of it all. For storing search data, Redux was used. URL matters where managed using React Router.
