@@ -15,11 +15,11 @@ const providerWrap = (
   </Provider>
 );
 
-console.log(store.getState());
+// console.log(store.getState());
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState());
+// });
 
 
 const rootElement = document.getElementById("root");
