@@ -1,3 +1,5 @@
+![alt text](https://drive.google.com/uc?id=1Sqr78CiTLUi-9eIbLZ5CT_KL1bxx1P2Y)
+
 # Weather App made with React
 
 This app lets you explore weather conditions all around the world. It's based on the Open Weather Map API. Once you've searched for the desired city, a list of matches will appear with it current weather and, if you click on one of them, you can access its details and forecast for the next five days.
